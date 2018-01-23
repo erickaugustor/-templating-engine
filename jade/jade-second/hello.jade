@@ -1,0 +1,97 @@
+//- Jade is identations sensitive 
+
+h2 Hello Jade
+p Some text
+
+
+//- Goodbye brackets!
+h2 Hello
+
+
+//- Classes and IDs
+div.box
+div#box
+
+
+//- Identation sensitive
+div.box
+    h2 Title
+h2 Title
+
+
+// HTML! < ! - -   - - / >
+//- Atributes inside parentheses 
+
+div.box(
+    data-name="box",
+     id="myBox"
+)
+
+.box
+
+
+//- Variables
+- var name = 'Simon'
+h2 #{name}
+
+- var pageTitle = 'Homepage'
+doctype 
+html(lang="en")
+    head   
+        title #{pageTitle}
+
+    body 
+        h1 Hello World
+
+
+//- Iteration 
+
+- var fruitBowl = ['banana', 'apple', 'mango']
+
+ul.fruit-salad
+
+    each fruit, i in fruitBowl
+        li I have a  #{i + 1}: #{fruit}
+
+
+
+
+//- Template Composition + Block
+
+include template
+extendes template
+
+//- override 
+block append config
+    - var age = 35
+    - var name = 'John Doe'
+
+//- before 
+block prepend main
+    h2 I am taking over
+
+block main
+    h2 I am taking over
+    h2 Hello, I am #{name} and am #{age} years
+
+
+//- Mixins
+
+mixin product(title, imageID, price)
+    .product   
+        .product__wrapper
+            img.product__img(
+                src="#{image}#{imageID}"
+            )
+        .product__content
+            h2.product__title #{title}
+            p.product__price AU$ #{price}
+
+
+.products 
+    +product('iPhone', 464, '599.9')
+
+
+
+//- Navigation Module
+
