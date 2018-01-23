@@ -165,3 +165,25 @@ html
                         li= item
         
             +makeList("Dog", "Cat", "Fish")
+
+
+            
+            extends extendex 
+            block header
+                h3 The Title
+            block content
+                p 
+                | Nulla fringilla, nibh sed placerat posuere,
+                | metus urna lacinia sapien, in consectetur justo ex
+                | sit amet enim. Aenean gravida mauris quis risus 
+                | tempor tempor. Vivamus malesuada maximus leo, vel 
+                | aliquam erat mattis lacinia. Nunc sagittis ante at 
+                | condimentum euismod.
+           
+            block append content2
+                p  
+                    | Appended Data
+
+            block prepend content3
+                p
+                    | I come First
